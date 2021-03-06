@@ -5,7 +5,7 @@ incoming_text = input_file.read
 
 # logic that will handle translation
 # determine which filter to use - to english or to braille?
-# this will have an output "to English "
+# this will have an output
 
 output_file = File.open(ARGV[1], "w")
 
