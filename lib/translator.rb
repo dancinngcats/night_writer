@@ -18,4 +18,8 @@ class Translator
       end.compact.flatten
     end
   end
+
+  def first_line
+    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 0 }
+  end
 end
