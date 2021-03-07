@@ -26,4 +26,10 @@ class TranslatorTest < Minitest::Test
 
     assert_equal expected, @translator.second_line
   end
+
+  def test_it_can_format_the_third_line
+    expected = ["..", "..", "0.", "0.", "0.", "..", ".0", "0.", "0.", "0.", "..", "..", "..", "0.", "0.", "..", "0.", ".."]
+
+    assert_equal expected, @translator.third_line
+  end
 end
