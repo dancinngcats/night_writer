@@ -32,4 +32,13 @@ class TranslatorTest < Minitest::Test
 
     assert_equal expected, @translator.third_line
   end
+
+  def test_it_can_return_braille_for_text_file
+    expected =  "0.0.0.0.0....00.0.0.00...0.0.0..000.
+  00.00.0..0..00.0000..0..0.000......0
+  ....0.0.0....00.0.0.......0.0...0...
+  "
+    assert_instance_of String, @translator.braille_it
+    assert_equal expected, @translator.braille_it
+  end
 end
