@@ -32,6 +32,12 @@ class Translator
   end
 
   def braille_it
-    first_line.reduce(:+) + "\n" + second_line.reduce(:+) + "\n" + third_line.reduce(:+) + "\n"
+    new_array = []
+    loop do first_line.length <= 80
+      new_array << first_line.reduce(:+) + "\n" + second_line.reduce(:+) + "\n" + third_line.reduce(:+) + "\n"
+      break
+    end
+    new_array.join
   end
+
 end
