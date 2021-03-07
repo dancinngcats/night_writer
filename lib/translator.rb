@@ -26,4 +26,8 @@ class Translator
   def second_line
     braille_array.flatten.select.each_with_index { |_, i| i % 3 == 1 }
   end
+
+  def third_line
+    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 2 }
+  end
 end
