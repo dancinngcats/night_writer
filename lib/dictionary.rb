@@ -42,15 +42,7 @@ module Dictionary
     }
   end
 
-  def braille_to_eng
-    eng_to_braille.invert
-  end
-
-
-
-
+  # def braille_to_eng
+  #   eng_to_braille.invert
+  # end
 end
-
-# Update your program to translate a single letter
-# Update your program for multiple letters
-# messages of more than 80 characters are split over multiple lines.
