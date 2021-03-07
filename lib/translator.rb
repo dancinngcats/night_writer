@@ -30,4 +30,8 @@ class Translator
   def third_line
     braille_array.flatten.select.each_with_index { |_, i| i % 3 == 2 }
   end
+
+  def braille_it
+    first_line.reduce(:+) + "\n" + second_line.reduce(:+) + "\n" + third_line.reduce(:+) + "\n"
+  end
 end
