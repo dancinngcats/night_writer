@@ -41,4 +41,10 @@ class DetranslatorTest < Minitest::Test
 
     assert_equal expected, @detranslator.mega_first_array
   end
+
+  def test_it_can_return_mega_second_line_as_a_nested_array
+    expected = [[".", "."], ["0", "."], ["0", "."], ["0", "."], [".", "0"], ["0", "."]]
+
+    assert_equal expected, @detranslator.mega_second_array
+  end
 end
