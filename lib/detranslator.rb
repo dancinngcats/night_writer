@@ -32,4 +32,8 @@ class Detranslator
   def mega_second_array
     mega_second_line.chars.each_slice(2).to_a
   end
+
+  def mega_third_array
+    mega_third_line.chars.each_slice(2).to_a
+  end
 end
