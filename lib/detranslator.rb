@@ -36,4 +36,8 @@ class Detranslator
   def mega_third_array
     mega_third_line.chars.each_slice(2).to_a
   end
+
+  def rearrangement_by_index
+    mega_first_array.map.with_index { |element,index| element + mega_second_array[index] + mega_third_array[index]}
+  end
 end
