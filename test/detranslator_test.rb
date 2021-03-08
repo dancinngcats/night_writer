@@ -23,4 +23,8 @@ class DetranslatorTest < Minitest::Test
 
     assert_equal expected, @detranslator.split_input
   end
+
+  def test_it_can_return_and_combine_every_fourth_line_with_first
+    assert_equal "0.00000.0..0", @detranslator.mega_first_line
+  end
 end
