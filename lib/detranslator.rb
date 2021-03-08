@@ -16,4 +16,8 @@ class Detranslator
   def mega_first_line
     split_input.select.with_index{|e,i| (i+1) % 3 == 1}.join
   end
+
+  def mega_second_line
+    split_input.select.with_index{|e,i| (i+1) % 3 == 2}.join
+  end
 end
