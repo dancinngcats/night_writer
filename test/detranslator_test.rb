@@ -53,4 +53,10 @@ class DetranslatorTest < Minitest::Test
 
     assert_equal expected, @detranslator.mega_third_array
   end
+
+  def test_it_can_sort_nested_arrays_by_index
+    expected = [["0", ".", ".", ".", ".", "."], ["0", "0", "0", ".", "0", "."], ["0", "0", "0", ".", "0", "."], ["0", ".", "0", ".", "0", "."], ["0", ".", ".", "0", ".", "."], [".", "0", "0", ".", "0", "."]]
+
+    assert_equal expected, @detranslator.rearrangement_by_index
+  end
 end
