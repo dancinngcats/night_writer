@@ -17,4 +17,10 @@ class DetranslatorTest < Minitest::Test
     assert_instance_of Hash, @detranslator.braille_to_eng
     assert_equal "l", @detranslator.braille_to_eng[["0.", "0.", "0."]]
   end
+
+  def test_it_can_split_input
+    expected = ["0.00000.0..0", "..0.0.0..00.", "..0.0.0...0."]
+
+    assert_equal expected, @detranslator.split_input
+  end
 end
