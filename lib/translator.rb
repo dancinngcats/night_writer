@@ -15,23 +15,33 @@ class Translator
         if letter == eng
           braille
         end
-      end.compact.flatten
+      end.compact
     end
   end
 
   def first_line
-    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 0 }
+    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 0 }.join
   end
 
   def second_line
-    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 1 }
+    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 1 }.join
   end
 
   def third_line
-    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 2 }
+    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 2 }.join
   end
 
   def braille_it
-    first_line.reduce(:+) + "\n" + second_line.reduce(:+) + "\n" + third_line.reduce(:+) + "\n"
+    array = []
+    first = first_line
+    second = second_line
+    third = third_line
+
+    until first.length == 0
+      array << first.slice!(0..79) + "\n"
+      array << second.slice!(0..79)  + "\n"
+      array << third.slice!(0..79) + "\n"
+    end
+      array.join
+    end
   end
-end
