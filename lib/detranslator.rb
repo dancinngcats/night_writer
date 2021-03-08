@@ -24,4 +24,8 @@ class Detranslator
   def mega_third_line
     split_input.select.with_index{|e,i| (i+1) % 3 == 0}.join
   end
+
+  def mega_first_array
+    mega_first_line.chars.each_slice(2).to_a
+  end
 end
