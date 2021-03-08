@@ -1,7 +1,7 @@
 module Dictionary
 
   def eng_to_braille
-    dictionary = {
+    {
     "a" => ["0.", "..", ".."],
     "b" => ["0.", "0.", ".."],
     "c" => ["00", "..", ".."],
@@ -43,7 +43,7 @@ module Dictionary
   end
 
   def braille_to_eng
-    undictionary = {
+    {
     ["0.", "..", ".."] => "a",
     ["0.", "0.", ".."] => "b",
     ["00", "..", ".."] => "c",
