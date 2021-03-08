@@ -59,4 +59,10 @@ class DetranslatorTest < Minitest::Test
 
     assert_equal expected, @detranslator.rearrangement_by_index
   end
+
+  def test_it_can_combine_and_resplit_strings_to_match_dictionary_format
+    expected = [["0.", "..", ".."], ["00", "0.", "0."], ["00", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", ".."], [".0", "0.", "0."]]
+
+    assert_equal expected, @detranslator.make_it_readable
+  end
 end
