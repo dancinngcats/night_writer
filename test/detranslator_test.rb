@@ -65,4 +65,8 @@ class DetranslatorTest < Minitest::Test
 
     assert_equal expected, @detranslator.make_it_readable
   end
+
+  def test_it_can_do_magic_and_translate_braille_to_eng
+    assert_equal "apples", @detranslator.eng_it
+  end
 end
