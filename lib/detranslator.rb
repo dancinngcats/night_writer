@@ -40,4 +40,8 @@ class Detranslator
   def rearrangement_by_index
     mega_first_array.map.with_index { |element,index| element + mega_second_array[index] + mega_third_array[index]}
   end
+
+  def make_it_readable
+    rearrangement_by_index.join.scan(/.{2}/).each_slice(3).to_a
+  end
 end
