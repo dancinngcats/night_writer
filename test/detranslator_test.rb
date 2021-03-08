@@ -35,4 +35,10 @@ class DetranslatorTest < Minitest::Test
   def test_it_can_return_and_combine_every_third_line
     assert_equal "..0.0.0...0.", @detranslator.mega_third_line
   end
+
+  def test_it_can_return_mega_first_line_as_a_nested_array
+    expected = [["0", "."], ["0", "0"], ["0", "0"], ["0", "."], ["0", "."], [".", "0"]]
+
+    assert_equal expected, @detranslator.mega_first_array
+  end
 end
