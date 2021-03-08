@@ -31,4 +31,8 @@ class DetranslatorTest < Minitest::Test
   def test_it_can_return_and_combine_every_fifth_line_with_second
     assert_equal "..0.0.0..00.", @detranslator.mega_second_line
   end
+
+  def test_it_can_return_and_combine_every_third_line
+    assert_equal "..0.0.0...0.", @detranslator.mega_third_line
+  end
 end
