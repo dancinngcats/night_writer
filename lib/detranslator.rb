@@ -44,4 +44,14 @@ class Detranslator
   def make_it_readable
     rearrangement_by_index.join.scan(/.{2}/).each_slice(3).to_a
   end
+
+  def eng_it
+    make_it_readable.map do |element|
+      braille_to_eng.map do |braille, eng|
+        if element == braille
+          eng
+        end
+      end
+    end.join
+  end
 end
