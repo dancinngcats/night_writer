@@ -1,7 +1,7 @@
 require_relative 'translator'
 input_file = File.open(ARGV[0], "r")
 
-#
+
 incoming_text = input_file.read.chomp
 
 translator = Translator.new(incoming_text)

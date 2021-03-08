@@ -42,6 +42,6 @@ class Translator
       array << second.slice!(0..79)  + "\n"
       array << third.slice!(0..79) + "\n"
     end
-      array.join
-    end
+    array.join
   end
+end
