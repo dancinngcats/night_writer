@@ -11,36 +11,28 @@ class Translator
 
   def braille_array
     input_text.chars.map do |letter|
-      eng_to_braille.map do |eng, braille|
-        if letter == eng
-          braille
-        end
-      end.compact
-    end
+      eng_to_braille[letter]
+    end.compact
   end
 
-  def first_line
-    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 0 }.join
+  def all_lines(leftover)
+    braille_array.flatten.select.each_with_index { |_, i| i % 3 == (leftover) }.join
   end
 
-  def second_line
-    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 1 }.join
-  end
-
-  def third_line
-    braille_array.flatten.select.each_with_index { |_, i| i % 3 == 2 }.join
+  def slicer(number)
+    number.slice!(0..79)
   end
 
   def braille_it
     array = []
-    first = first_line
-    second = second_line
-    third = third_line
+    first = all_lines(0)
+    second =  all_lines(1)
+    third = all_lines(2)
 
     until first.length == 0
-      array << first.slice!(0..79) + "\n"
-      array << second.slice!(0..79)  + "\n"
-      array << third.slice!(0..79) + "\n"
+      array << slicer(first) + "\n"
+      array << slicer(second) + "\n"
+      array << slicer(third) + "\n"
     end
     array.join
   end

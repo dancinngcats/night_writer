@@ -5,8 +5,8 @@ class DetranslatorTest < Minitest::Test
 
   def setup
     @detranslator = Detranslator.new("0.00000.0..0
-    ..0.0.0..00.
-    ..0.0.0...0.")
+      ..0.0.0..00.
+      ..0.0.0...0.")
   end
 
   def test_it_exists
@@ -15,7 +15,7 @@ class DetranslatorTest < Minitest::Test
 
   def test_it_can_return_braille_to_eng_values
     assert_instance_of Hash, @detranslator.braille_to_eng
-    assert_equal "l", @detranslator.braille_to_eng[["0.", "0.", "0."]]
+    assert_equal ["l"], @detranslator.braille_to_eng[["0.", "0.", "0."]]
   end
 
   def test_it_can_split_input
@@ -25,15 +25,15 @@ class DetranslatorTest < Minitest::Test
   end
 
   def test_it_can_return_and_combine_every_fourth_line_with_first
-    assert_equal "0.00000.0..0", @detranslator.mega_first_line
+    assert_equal "0.00000.0..0", @detranslator.mega_line(1)
   end
 
   def test_it_can_return_and_combine_every_fifth_line_with_second
-    assert_equal "..0.0.0..00.", @detranslator.mega_second_line
+    assert_equal "..0.0.0..00.", @detranslator.mega_line(2)
   end
 
   def test_it_can_return_and_combine_every_third_line
-    assert_equal "..0.0.0...0.", @detranslator.mega_third_line
+    assert_equal "..0.0.0...0.", @detranslator.mega_line(0)
   end
 
   def test_it_can_return_mega_first_line_as_a_nested_array
