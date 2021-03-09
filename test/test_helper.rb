@@ -8,3 +8,4 @@ require 'minitest/pride'
 
 require './lib/dictionary'
 require './lib/translator'
+require './lib/detranslator'
